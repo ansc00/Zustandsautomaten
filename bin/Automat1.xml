@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fsm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<states>
+		<state name="Q1"/>
+		<state name="Q2"/>
+	</states>
+	
+	<transitions>
+		<transition source="Q1" target="Q1" event="0" />
+		<transition source="Q1" target="Q2" event="1" />
+		<transition source="Q2" target="Q1" event="0" />
+		<transition source="Q2" target="Q2" event="1" />
+	</transitions>
+
+	<startState name="Q1"/>
+
+	<endState name="Q1"/>
+</fsm>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<fsm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<states>
+		<state name="S"/>
+		<state name="Q1"/>
+		<state name="Q2"/>
+		<state name="R1"/>
+		<state name="R2"/>
+	</states>
+	
+	<transitions>
+		<transition source="S" target="Q1" event="a" />
+		<transition source="S" target="R1" event="b" />
+		
+		<transition source="Q1" target="Q1" event="a" />
+		<transition source="Q1" target="Q2" event="b" />
+		<transition source="Q2" target="Q1" event="a" />
+		<transition source="Q2" target="Q2" event="b" />
+	
+		<transition source="R1" target="R1" event="b" />
+		<transition source="R1" target="R2" event="a" />
+		<transition source="R2" target="R1" event="b" />
+		<transition source="R2" target="R2" event="a" />
+	</transitions>
+
+	<startState name="S"/>
+
+	<endState name="Q1"/>
+	<endState name="R1"/>
+	
+</fsm>

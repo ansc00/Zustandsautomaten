@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- Root-Element -->
+<xs:element name="fsm" type="FinitStateMachine" />
+
+
+<!-- FinitStateMachine-Typ -->
+<xs:complexType name="FinitStateMachine">
+	<xs:sequence>
+		<xs:element name="states" type="States" minOccurs="1" maxOccurs="unbounded" />
+		<xs:element name="transitions" type="Transitions" minOccurs="1" maxOccurs="unbounded" />
+		<xs:element name="startState" type="State" minOccurs="1" maxOccurs="1" />
+		<xs:element name="endState" type="State" minOccurs="1" maxOccurs="unbounded" />
+	</xs:sequence>
+</xs:complexType>
+
+
+<!-- States-Typ -->
+<xs:complexType name="States">
+	<xs:sequence>
+		<xs:element name="state" type="State" minOccurs="1" maxOccurs="unbounded" />
+	</xs:sequence>
+</xs:complexType>
+
+
+<!-- Transition-Typ -->
+<xs:complexType name="Transitions">
+	<xs:sequence>
+		<xs:element name="transition" type="Transition" minOccurs="1" maxOccurs="unbounded" />
+	</xs:sequence>
+</xs:complexType>
+
+
+<!-- State-Typ -->
+<xs:complexType name="State">
+	<xs:attribute name="name" type="xs:string" use="required" />
+	<xs:attribute name="entryaction" type="xs:string" />
+	<xs:attribute name="exitaction" type="xs:string" />
+</xs:complexType>
+
+
+<!-- Transition-Typ -->
+<xs:complexType name="Transition">
+	<xs:attribute name="event" type="xs:string" use="required" />
+	<xs:attribute name="source" type="xs:string" use="required" />
+	<xs:attribute name="target" type="xs:string" use="required" />
+	<xs:attribute name="action" type="xs:string" />
+</xs:complexType>
+</xs:schema>
